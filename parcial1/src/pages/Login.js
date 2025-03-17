@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useNavigate } from 'react-router-dom';
-
+import { FormattedMessage } from 'react-intl';
 
 function Login() {
     const [formValues, setFormValues] = useState({username:"", password:""})
@@ -57,16 +57,20 @@ function Login() {
       <Form>
      <Form.Group className="mb-6" controlId="formBasicEmail">
         <br></br>
-       <Form.Label>username</Form.Label>
+       <Form.Label>
+       <FormattedMessage id="username" />
+       </Form.Label>
        <Form.Control type="email" placeholder="Enter email" onChange={handleUsernameChange} value={formValues.email}/>
      </Form.Group>
 
      <Form.Group className="mb-3" controlId="formBasicPassword">
-       <Form.Label>Password</Form.Label>
+       <Form.Label>
+       <FormattedMessage id="password" />
+       </Form.Label>
        <Form.Control type="password" placeholder="Password" onChange={handlePasswordChange} value = {formValues.password}/>
      </Form.Group>
      <Button variant="primary" onClick={clickSubmit}>
-       Login
+     <FormattedMessage id="login" />
      </Button>
    </Form>
       </div>
